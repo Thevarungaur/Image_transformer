@@ -1,0 +1,38 @@
+# -----------------------------
+# 🐍 Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# -----------------------------
+# 🧠 Virtual Environment
+# -----------------------------
+venv/
+ENV/
+env/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# -----------------------------
+# 📂 IDE / Editor Files
+# -----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# 🌐 Str
