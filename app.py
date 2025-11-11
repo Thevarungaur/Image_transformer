@@ -145,7 +145,7 @@ if uploaded_file:
         with col3:
             st.image(gray_image, caption="Original Grayscale", width=360)
         with col4:
-            st.image(transformed_img, caption=caption, width=None)
+            st.image(transformed_img, caption=caption)
 
         st.markdown(f"<p class='caption'><b>Transformation:</b> {caption}</p>", unsafe_allow_html=True)
 
