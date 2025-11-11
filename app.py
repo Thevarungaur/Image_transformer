@@ -143,7 +143,7 @@ if uploaded_file:
 
         col3, col4 = st.columns(2, gap="large")
         with col3:
-            st.image(gray_image, caption="Original Grayscale", width=360)
+            st.image(gray_image, caption="Original Grayscale")
         with col4:
             st.image(transformed_img, caption=caption)
 
