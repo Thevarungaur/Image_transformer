@@ -12,7 +12,7 @@ from image_utils import (
 # -------------------------------
 st.set_page_config(
     page_title="Image Transformation App",
-    page_icon="",
+    page_icon="📸",
     layout="wide"
 )
 
@@ -94,7 +94,7 @@ st.title("Image Transformation App")
 
 st.markdown("""
 Upload an image (from your **camera or gallery**) to view it in **original vs grayscale** format  
-and apply transformations — **Rotation**, **Scaling**, or **Translation** interactively.
+and apply transformations — **Rotation**, **Scaling**, or **Translation** — interactively.
 """)
 
 uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
@@ -103,19 +103,19 @@ if uploaded_file:
     original_image = Image.open(uploaded_file)
     gray_image = read_and_preprocess_image(uploaded_file)
 
-    st.subheader(" Original vs Grayscale Comparison")
+    st.subheader("Original vs Grayscale Comparison")
 
     col1, col2 = st.columns(2, gap="large")
     with col1:
-        st.image(original_image, caption="Original Image", use_container_width=True)
+        st.image(original_image, caption="Original Image", width=360)
     with col2:
-        st.image(gray_image, caption="Grayscale Image", use_container_width=True)
+        st.image(gray_image, caption="Grayscale Image", width=360)
 
-    with st.expander(" View Partial 2D Matrix Representation"):
+    with st.expander("View Partial 2D Matrix Representation"):
         st.text(gray_image[:10, :10])
 
     st.markdown("---")
-    st.subheader(" Apply a Transformation")
+    st.subheader("Apply a Transformation")
 
     transform_choice = st.selectbox("Select transformation type:", ["Rotation", "Scaling", "Translation"])
 
@@ -140,22 +140,22 @@ if uploaded_file:
 
     if transformed_img is not None:
         st.markdown("---")
-        st.subheader(" Transformation Result")
+        st.subheader("Transformation Result")
 
         col3, col4 = st.columns(2, gap="large")
         with col3:
-            st.image(gray_image, caption="Original Grayscale", use_container_width=True)
+            st.image(gray_image, caption="Original Grayscale", width=360)
         with col4:
-            st.image(transformed_img, caption=caption, use_container_width=True)
+            st.image(transformed_img, caption=caption, width=360)
 
         st.markdown(f"<p class='caption'><b>Transformation:</b> {caption}</p>", unsafe_allow_html=True)
 
     st.markdown("---")
-    st.subheader(" Camera & System Specifications")
+    st.subheader("Camera & System Specifications")
     st.markdown("""
     - **Camera Used:** Mobile Phone Camera  
-    - **Image Format:** JPG / PNG  / JPEG
-    - **Color Mode:** 8-bit Grayscale    
+    - **Image Format:** JPG / PNG / JPEG  
+    - **Color Mode:** 8-bit Grayscale  
     """)
     st.success("✅ Transformation successfully applied.")
 
