@@ -70,7 +70,7 @@ hr {
 
 .responsive-img {
     width: auto;
-    max-width: 360px;
+    max-width: 1000px;
     height: auto;
     border-radius: 10px;
     display: block;
