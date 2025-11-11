@@ -68,9 +68,8 @@ hr {
     margin: 1.5em 0;
 }
 
-/* Image layout */
 .responsive-img {
-    width: 100%;
+    width: auto;
     max-width: 360px;
     height: auto;
     border-radius: 10px;
