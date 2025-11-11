@@ -139,9 +139,9 @@ if uploaded_file:
         caption = f"Translated by ({tx}, {ty}) pixels"
 
     if transformed_img is not None:
-    st.markdown("---")
-    st.subheader("Transformation Result")
-    col3, col4 = st.columns(2, gap="large")
+       st.markdown("---")
+       st.subheader("Transformation Result")
+       col3, col4 = st.columns(2, gap="large")
     with col3:
         st.image(gray_image, caption="Original Grayscale")
     with col4:
