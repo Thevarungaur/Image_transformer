@@ -127,9 +127,9 @@ if uploaded_file:
         caption = f"Rotated by {angle}°"
 
     elif transform_choice == "Scaling":
-    scale_factor = st.slider("Select scaling factor", 0.1, 5.0, 1.0, step=0.1)
-    transformed_img = scale_image(gray_image, scale_factor)
-    caption = f"Scaled by {scale_factor}× (size: {transformed_img.shape[1]}×{transformed_img.shape[0]})"
+         scale_factor = st.slider("Select scaling factor", 0.1, 5.0, 1.0, step=0.1)
+         transformed_img = scale_image(gray_image, scale_factor)
+         caption = f"Scaled by {scale_factor}× (size: {transformed_img.shape[1]}×{transformed_img.shape[0]})"
 
 
     elif transform_choice == "Translation":
