@@ -30,7 +30,17 @@ def scale_image(image, scale_factor):
     """Scale the image by the specified factor."""
     if scale_factor <= 0:
         raise ValueError("Scaling factor must be greater than zero.")
-    scaled_img = cv2.resize(image, None, fx=scale_factor, fy=scale_factor)
+    # Get original size
+    original_height, original_width = image.shape[:2]
+    # Compute new size
+    new_width = int(original_width * scale_factor)
+    new_height = int(original_height * scale_factor)
+    # Ensure at least 1 pixel in each dimension
+    new_width = max(new_width, 1)
+    new_height = max(new_height, 1)
+    scaled_img = cv2.resize(image,
+                            (new_width, new_height),
+                            interpolation=cv2.INTER_LINEAR)
     return scaled_img
 
 
