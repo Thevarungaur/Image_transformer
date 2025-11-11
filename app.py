@@ -156,7 +156,7 @@ if uploaded_file:
     - **Image Format:** JPG / PNG / JPEG  
     - **Color Mode:** 8-bit Grayscale  
     """)
-    st.success("✅ Transformation successfully applied.")
+    st.success(" Transformation successfully applied.")
 
 else:
     st.info("👆 Upload an image file to start transformations.")
