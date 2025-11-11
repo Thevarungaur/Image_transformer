@@ -127,9 +127,10 @@ if uploaded_file:
         caption = f"Rotated by {angle}°"
 
     elif transform_choice == "Scaling":
-        scale_factor = st.slider("Select scaling factor", 0.1, 3.0, 1.0, step=0.1)
-        transformed_img = scale_image(gray_image, scale_factor)
-        caption = f"Scaled by {scale_factor}×"
+    scale_factor = st.slider("Select scaling factor", 0.1, 5.0, 1.0, step=0.1)
+    transformed_img = scale_image(gray_image, scale_factor)
+    caption = f"Scaled by {scale_factor}× (size: {transformed_img.shape[1]}×{transformed_img.shape[0]})"
+
 
     elif transform_choice == "Translation":
         tx = st.slider("Translate along X-axis (pixels)", -200, 200, 50)
@@ -138,17 +139,16 @@ if uploaded_file:
         caption = f"Translated by ({tx}, {ty}) pixels"
 
     if transformed_img is not None:
-        st.markdown("---")
-        st.subheader("Transformation Result")
-
-        col3, col4 = st.columns(2, gap="large")
-        with col3:
-            st.image(gray_image, caption="Original Grayscale")
-        with col4:
-            st.image(transformed_img, caption=caption)
-
-        st.markdown(f"<p class='caption'><b>Transformation:</b> {caption}</p>", unsafe_allow_html=True)
-
+    st.markdown("---")
+    st.subheader("Transformation Result")
+    col3, col4 = st.columns(2, gap="large")
+    with col3:
+        st.image(gray_image, caption="Original Grayscale")
+    with col4:
+        # Use actual width
+        new_w = transformed_img.shape[1]
+        st.image(transformed_img, caption=caption, width=new_w)
+    st.markdown(f"<p class='caption'><b>Transformation:</b> {caption}</p>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader("Camera & System Specifications")
     st.markdown("""
