@@ -147,7 +147,7 @@ if uploaded_file:
     with col4:
         # Use actual width
         new_w = transformed_img.shape[1]
-        st.image(transformed_img, caption=caption, width=new_w)
+        st.image(transformed_img, caption=caption)
     st.markdown(f"<p class='caption'><b>Transformation:</b> {caption}</p>", unsafe_allow_html=True)
     st.markdown("---")
     st.subheader("Camera & System Specifications")
