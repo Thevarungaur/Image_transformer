@@ -143,7 +143,7 @@ if uploaded_file:
        st.subheader("Transformation Result")
        col3, col4 = st.columns(2, gap="large")
     with col3:
-        st.image(gray_image, caption="Original Grayscale")
+        st.image(gray_image, caption="Original Grayscale",width= gray_image.shape[1])
     with col4:
         # Use actual width
         new_w = transformed_img.shape[1]
